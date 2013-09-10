@@ -1,0 +1,19 @@
+{
+  "name": "mongojs.insert",
+  "description": "mongojs insert",
+  "dependencies": [
+    "mongojs.collection"
+  ],
+  "ports": {
+    "input": {
+      "document": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "success": {
+        "type": "boolean"
+      }
+    }
+  }
+}

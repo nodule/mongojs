@@ -1,0 +1,22 @@
+{
+  "name": "mongojs.find",
+  "description": "mongojs find",
+  "dependency": {
+    "mongojs.collection"
+  },
+  "ports": {
+    "input": {
+      "criteria": {
+        "type": "object"
+      },
+      "sort": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "documents": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -21,6 +21,9 @@
       "mongojs"
     ],
     "components": [
+      "db",
+      "collection",
+      "find"
     ]
   },
   "scripts": {

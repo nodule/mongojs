@@ -1,0 +1,19 @@
+{
+  "name": "mongojs.remove",
+  "description": "mongojs remove",
+  "dependencies": [
+    "mongojs.collection"
+  ],
+  "ports": {
+    "input": {
+      "criteria": {
+        "type": "object"
+      }
+    },
+    "output": {
+      "success": {
+        "type": "boolean"
+      }
+    }
+  }
+}
