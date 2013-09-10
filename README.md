@@ -1,4 +1,2 @@
-chix-mongojs
-============
-
 Chiχ MongoJS
+============
