@@ -16,16 +16,16 @@
   "engines": {
     "node": ">=0.6.0"
   },
+  "dependencies": {
+    "mongojs": "latest"
+  },
   "chix": {
-    "dependencies": [
-      "mongojs"
-    ],
     "components": [
       "db",
       "collection",
-      "find"
+      "find",
+      "insert",
+      "remove"
     ]
   },
-  "scripts": {
-  }
-  }
+}
