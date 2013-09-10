@@ -1,0 +1,16 @@
+{
+  "name": "mongojs.criteria",
+  "description": "mongojs criteria",
+  "ports": {
+    "input": {
+      "criteria": {
+        "type": "string"
+      }
+    },
+    "output": {
+      "criteria": {
+        "type": "object"
+      }
+    }
+  }
+}

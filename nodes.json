@@ -20,6 +20,23 @@
     "description": "mongojs collection",
     "name": "mongojs.collection"
   },
+  "mongojs.criteria": {
+    "fn": "output({ criteria: JSON.parse(input.criteria) })\n",
+    "ports": {
+      "input": {
+        "criteria": {
+          "type": "string"
+        }
+      },
+      "output": {
+        "criteria": {
+          "type": "object"
+        }
+      }
+    },
+    "description": "mongojs criteria",
+    "name": "mongojs.criteria"
+  },
   "mongojs.db": {
     "fn": "output({ db: mongojs(input.connectionString) })\n",
     "ports": {
