@@ -2,7 +2,7 @@
   "name": "mongojs.db",
   "description": "mongojs database",
   "type": "provider",
-  "require" {
+  "require": {
     "mongojs": "latest"
   },
   "ports": {

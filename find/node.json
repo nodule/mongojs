@@ -1,9 +1,9 @@
 {
   "name": "mongojs.find",
   "description": "mongojs find",
-  "dependency": {
+  "dependency": [
     "mongojs.collection"
-  },
+  ],
   "ports": {
     "input": {
       "criteria": {
