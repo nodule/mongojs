@@ -9,6 +9,9 @@
     "input": {
       "collection": {
         "type": "string"
+      },
+      "db": {
+        "type": "object"
       }
     },
     "output": {

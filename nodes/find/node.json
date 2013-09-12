@@ -1,11 +1,14 @@
 {
   "name": "mongojs.find",
   "description": "mongojs find",
-  "dependency": [
+  "dependencies": [
     "mongojs.collection"
   ],
   "ports": {
     "input": {
+      "collection": {
+        "type": "object"
+      },
       "criteria": {
         "type": "object"
       },

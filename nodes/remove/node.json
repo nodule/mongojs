@@ -6,6 +6,9 @@
   ],
   "ports": {
     "input": {
+      "collection": {
+        "type": "object"
+      },
       "criteria": {
         "type": "object"
       }
