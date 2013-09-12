@@ -5,6 +5,9 @@
       "input": {
         "collection": {
           "type": "string"
+        },
+        "db": {
+          "type": "object"
         }
       },
       "output": {
@@ -59,9 +62,12 @@
     "name": "mongojs.db"
   },
   "mongojs.find": {
-    "fn": "output = [mongojs.collection.find, input.criteria]\n",
+    "fn": "output = [input.collection.find, input.criteria]\n",
     "ports": {
       "input": {
+        "collection": {
+          "type": "object"
+        },
         "criteria": {
           "type": "object"
         },
@@ -75,16 +81,19 @@
         }
       }
     },
-    "dependency": [
+    "dependencies": [
       "mongojs.collection"
     ],
     "description": "mongojs find",
     "name": "mongojs.find"
   },
   "mongojs.insert": {
-    "fn": "output = [mongojs.collection.insert, input.document]\n",
+    "fn": "output = [input.collection.insert, input.document]\n",
     "ports": {
       "input": {
+        "collection": {
+          "type": "object"
+        },
         "document": {
           "type": "object"
         }
@@ -102,9 +111,12 @@
     "name": "mongojs.insert"
   },
   "mongojs.remove": {
-    "fn": "output = [mongojs.collection.remove, input.criteria]\n",
+    "fn": "output = [input.collection.remove, input.criteria]\n",
     "ports": {
       "input": {
+        "collection": {
+          "type": "object"
+        },
         "criteria": {
           "type": "object"
         }
