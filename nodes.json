@@ -1,6 +1,6 @@
 {
   "mongojs.collection": {
-    "fn": "output({ collection: input.db.collection(input.collection) })\n",
+    "fn": "output = { collection: input.db.collection(input.collection) }\n",
     "ports": {
       "input": {
         "collection": {
@@ -21,7 +21,7 @@
     "name": "mongojs.collection"
   },
   "mongojs.criteria": {
-    "fn": "output({ criteria: JSON.parse(input.criteria) })\n",
+    "fn": "output = { criteria: JSON.parse(input.criteria) }\n",
     "ports": {
       "input": {
         "criteria": {
@@ -38,7 +38,7 @@
     "name": "mongojs.criteria"
   },
   "mongojs.db": {
-    "fn": "output({ db: mongojs(input.connectionString) })\n",
+    "fn": "output = { db: mongojs(input.connectionString) }\n",
     "ports": {
       "input": {
         "connectionString": {
@@ -59,7 +59,7 @@
     "name": "mongojs.db"
   },
   "mongojs.find": {
-    "fn": "output([mongojs.collection.find, input.criteria])\n",
+    "fn": "output = [mongojs.collection.find, input.criteria]\n",
     "ports": {
       "input": {
         "criteria": {
@@ -82,7 +82,7 @@
     "name": "mongojs.find"
   },
   "mongojs.insert": {
-    "fn": "output([mongojs.collection.insert, input.document])\n",
+    "fn": "output = [mongojs.collection.insert, input.document]\n",
     "ports": {
       "input": {
         "document": {
@@ -102,7 +102,7 @@
     "name": "mongojs.insert"
   },
   "mongojs.remove": {
-    "fn": "output([mongojs.collection.remove, input.criteria])\n",
+    "fn": "output = [mongojs.collection.remove, input.criteria]\n",
     "ports": {
       "input": {
         "criteria": {
