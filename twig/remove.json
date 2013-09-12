@@ -1,0 +1,13 @@
+{
+  "name": "mongojs.twig.remove",
+  "description": "mongojs remove", 
+  "nodes": [
+    { "name": "mongojs.db", "context": { "connectionString": "chix-test" } },
+    { "name": "mongojs.collection", "context": { "collection": "test" } },
+    { "name": "mongojs.remove" }
+  ],
+  "links": [
+    { "source": 0, "target": 1 },
+    { "source": 1, "target": 2 }
+  ]
+}

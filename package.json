@@ -19,9 +19,9 @@
   "dependencies": {
     "mongojs": "latest"
   },
-  "main": "nodes",
+  "main": "main",
   "chix": {
-    "components": [
+    "nodes": [
       "db",
       "collection",
       "find",
