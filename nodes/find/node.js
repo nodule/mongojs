@@ -1,1 +1,1 @@
-output([mongojs.collection.find, input.criteria])
+output = [mongojs.collection.find, input.criteria]

@@ -1,1 +1,1 @@
-output([mongojs.collection.insert, input.document])
+output = [mongojs.collection.insert, input.document]

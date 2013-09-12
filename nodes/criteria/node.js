@@ -1,1 +1,1 @@
-output({ criteria: JSON.parse(input.criteria) })
+output = { criteria: JSON.parse(input.criteria) }

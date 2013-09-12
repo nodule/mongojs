@@ -1,1 +1,1 @@
-output({ collection: input.db.collection(input.collection) })
+output = { collection: input.db.collection(input.collection) }

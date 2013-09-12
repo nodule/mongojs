@@ -1,1 +1,1 @@
-output([mongojs.collection.remove, input.criteria])
+output = [mongojs.collection.remove, input.criteria]

@@ -1,1 +1,1 @@
-output({ db: mongojs(input.connectionString) })
+output = { db: mongojs(input.connectionString) }
