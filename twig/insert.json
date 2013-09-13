@@ -4,7 +4,7 @@
   "nodes": [
     { "name": "mongojs.db", "context": { "connectionString": "chix-test" } },
     { "name": "mongojs.collection", "context": { "collection": "test" } },
-    { "name": "mongojs.insert", "context": { "hello": "World!" } }
+    { "name": "mongojs.insert", "context": { "document": { "hello": "World!" } } }
   ],
   "links": [
     { "source": 0, "target": 1, "port": "db" },
