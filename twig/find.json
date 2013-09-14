@@ -8,8 +8,8 @@
     { "name": "mongojs.find" }
   ],
   "links": [
-    { "source": 0, "target": 1, "port": "db" },
-    { "source": 1, "target": 3, "port": "collection" },
-    { "source": 2, "target": 3, "port": "criteria" }
+    { "source": 0, "target": 1, "out": "db" },
+    { "source": 1, "target": 3, "in": "db", "out": "collection" },
+    { "source": 2, "target": 3, "in": "collection", "out": "criteria" }
   ]
 }

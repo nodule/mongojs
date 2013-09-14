@@ -7,7 +7,7 @@
     { "name": "mongojs.remove" }
   ],
   "links": [
-    { "source": 0, "target": 1, "port": "db" },
-    { "source": 1, "target": 2, "port": "collection" }
+    { "source": 0, "target": 1, "out": "db" },
+    { "source": 1, "target": 2, "in": "db", "out": "collection" }
   ]
 }
