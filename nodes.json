@@ -62,7 +62,7 @@
     "name": "mongojs.db"
   },
   "mongojs.find": {
-    "fn": "output = [input.collection.find, input.criteria]\n",
+    "fn": "output = [input.collection, 'find', input.criteria]\n",
     "ports": {
       "input": {
         "collection": {
@@ -88,7 +88,7 @@
     "name": "mongojs.find"
   },
   "mongojs.insert": {
-    "fn": "output = [input.collection.insert, input.document]\n",
+    "fn": "output = [input.collection, 'insert', input.document]\n",
     "ports": {
       "input": {
         "collection": {
@@ -111,7 +111,7 @@
     "name": "mongojs.insert"
   },
   "mongojs.remove": {
-    "fn": "output = [input.collection.remove, input.criteria]\n",
+    "fn": "output = [input.collection, 'remove', input.criteria]\n",
     "ports": {
       "input": {
         "collection": {

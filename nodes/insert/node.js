@@ -1,1 +1,1 @@
-output = [input.collection.insert, input.document]
+output = [input.collection, 'insert', input.document]
