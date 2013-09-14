@@ -70,9 +70,6 @@
         },
         "criteria": {
           "type": "object"
-        },
-        "sort": {
-          "type": "object"
         }
       },
       "output": {
