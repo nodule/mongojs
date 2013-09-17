@@ -1,9 +1,9 @@
 {
-  "name": "mongojs.collection",
+  "name": "collection",
   "description": "mongojs collection",
   "type": "provider",
   "dependencies": [
-    "mongojs.db"
+    "db"
   ],
   "ports": {
     "input": {

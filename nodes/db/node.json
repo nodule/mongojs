@@ -1,5 +1,5 @@
 {
-  "name": "mongojs.db",
+  "name": "db",
   "description": "mongojs database",
   "type": "provider",
   "require": {

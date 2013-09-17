@@ -1,5 +1,5 @@
 {
-  "name": "mongojs.criteria",
+  "name": "criteria",
   "description": "mongojs criteria",
   "ports": {
     "input": {

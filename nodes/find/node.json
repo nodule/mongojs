@@ -1,8 +1,8 @@
 {
-  "name": "mongojs.find",
+  "name": "find",
   "description": "mongojs find",
   "dependencies": [
-    "mongojs.collection"
+    "collection"
   ],
   "ports": {
     "input": {
