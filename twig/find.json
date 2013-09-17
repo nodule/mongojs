@@ -1,11 +1,11 @@
 {
-  "name": "mongojs.twig.find",
+  "name": "twig.find",
   "description": "MongoJS find",
   "nodes": [
-    { "name": "mongojs.db", "context": { "connectionString": "chix-test" } },
-    { "name": "mongojs.collection", "context": { "collection": "test" } },
-    { "name": "mongojs.criteria", "context": { "criteria": "{}" } },
-    { "name": "mongojs.find" }
+    { "name": "db", "context": { "connectionString": "chix-test" } },
+    { "name": "collection", "context": { "collection": "test" } },
+    { "name": "criteria", "context": { "criteria": "{}" } },
+    { "name": "find" }
   ],
   "links": [
     { "source": 0, "target": 1, "out": "db", "in": "db" },

@@ -1,10 +1,10 @@
 {
-  "name": "mongojs.twig.insert",
+  "name": "twig.insert",
   "description": "mongojs insert", 
   "nodes": [
-    { "name": "mongojs.db", "context": { "connectionString": "chix-test" } },
-    { "name": "mongojs.collection", "context": { "collection": "test" } },
-    { "name": "mongojs.insert", "context": { "document": { "hello": "World!" } } }
+    { "name": "db", "context": { "connectionString": "chix-test" } },
+    { "name": "collection", "context": { "collection": "test" } },
+    { "name": "insert", "context": { "document": { "hello": "World!" } } }
   ],
   "links": [
     { "source": 0, "target": 1, "out": "db", "in": "db" },
