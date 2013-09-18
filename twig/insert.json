@@ -1,5 +1,5 @@
 {
-  "name": "twig.insert",
+  "name": "insert",
   "description": "mongojs insert", 
   "nodes": [
     { "name": "db", "context": { "connectionString": "chix-test" } },

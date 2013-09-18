@@ -1,5 +1,5 @@
 {
-  "name": "twig.remove",
+  "name": "remove",
   "description": "mongojs remove", 
   "nodes": [
     { "name": "db", "context": { "connectionString": "chix-test" } },

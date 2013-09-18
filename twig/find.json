@@ -1,5 +1,5 @@
 {
-  "name": "twig.find",
+  "name": "find",
   "description": "MongoJS find",
   "nodes": [
     { "name": "db", "context": { "connectionString": "chix-test" } },
