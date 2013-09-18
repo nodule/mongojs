@@ -154,24 +154,28 @@
       "description": "MongoJS find",
       "nodes": [
         {
+          "ns": "mongojs",
           "name": "db",
           "context": {
             "connectionString": "chix-test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "collection",
           "context": {
             "collection": "test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "criteria",
           "context": {
             "criteria": "{}"
           }
         },
         {
+          "ns": "mongojs",
           "name": "find"
         }
       ],
@@ -201,18 +205,21 @@
       "description": "mongojs insert",
       "nodes": [
         {
+          "ns": "mongojs",
           "name": "db",
           "context": {
             "connectionString": "chix-test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "collection",
           "context": {
             "collection": "test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "insert",
           "context": {
             "document": {
@@ -241,18 +248,21 @@
       "description": "mongojs remove",
       "nodes": [
         {
+          "ns": "mongojs",
           "name": "db",
           "context": {
             "connectionString": "chix-test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "collection",
           "context": {
             "collection": "test"
           }
         },
         {
+          "ns": "mongojs",
           "name": "remove"
         }
       ],
