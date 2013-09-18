@@ -149,7 +149,7 @@
     }
   },
   "twigs": {
-    "name": "mongojs",
+    "ns": "mongojs",
     "find": {
       "name": "find",
       "description": "MongoJS find",
