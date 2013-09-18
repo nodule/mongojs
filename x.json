@@ -1,0 +1,275 @@
+{
+  "name": "chix-mongojs",
+  "description": "MongoJS for Chiχ",
+  "version": "0.0.1",
+  "licences": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/psichi/chix/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psichi/chix-mongojs.git"
+  },
+  "dependencies": {
+    "mongojs": "latest"
+  },
+  "nodes": {
+    "collection": {
+      "fn": "output = { collection: input.db.collection(input.collection) }\n",
+      "ports": {
+        "input": {
+          "collection": {
+            "type": "string"
+          },
+          "db": {
+            "type": "object"
+          }
+        },
+        "output": {
+          "collection": {
+            "type": "object"
+          }
+        }
+      },
+      "dependencies": [
+        "db"
+      ],
+      "type": "provider",
+      "description": "mongojs collection",
+      "name": "collection"
+    },
+    "criteria": {
+      "fn": "output = { criteria: JSON.parse(input.criteria) }\n",
+      "ports": {
+        "input": {
+          "criteria": {
+            "type": "string"
+          }
+        },
+        "output": {
+          "criteria": {
+            "type": "object"
+          }
+        }
+      },
+      "description": "mongojs criteria",
+      "name": "criteria"
+    },
+    "db": {
+      "fn": "output = { db: mongojs(input.connectionString) }\n",
+      "ports": {
+        "input": {
+          "connectionString": {
+            "type": "string"
+          }
+        },
+        "output": {
+          "db": {
+            "type": "object"
+          }
+        }
+      },
+      "require": {
+        "mongojs": "latest"
+      },
+      "type": "provider",
+      "description": "mongojs database",
+      "name": "db"
+    },
+    "find": {
+      "fn": "output = [input.collection, 'find', input.criteria]\n",
+      "ports": {
+        "input": {
+          "collection": {
+            "type": "object"
+          },
+          "criteria": {
+            "type": "object"
+          }
+        },
+        "output": {
+          "documents": {
+            "type": "object"
+          }
+        }
+      },
+      "dependencies": [
+        "collection"
+      ],
+      "description": "mongojs find",
+      "name": "find"
+    },
+    "insert": {
+      "fn": "output = [input.collection, 'insert', input.document]\n",
+      "ports": {
+        "input": {
+          "collection": {
+            "type": "object"
+          },
+          "document": {
+            "type": "object"
+          }
+        },
+        "output": {
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "dependencies": [
+        "collection"
+      ],
+      "description": "mongojs insert",
+      "name": "insert"
+    },
+    "remove": {
+      "fn": "output = [input.collection, 'remove', input.criteria]\n",
+      "ports": {
+        "input": {
+          "collection": {
+            "type": "object"
+          },
+          "criteria": {
+            "type": "object"
+          }
+        },
+        "output": {
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "dependencies": [
+        "collection"
+      ],
+      "description": "mongojs remove",
+      "name": "remove"
+    }
+  },
+  "twigs": {
+    "find": {
+      "name": "find",
+      "description": "MongoJS find",
+      "nodes": [
+        {
+          "name": "db",
+          "context": {
+            "connectionString": "chix-test"
+          }
+        },
+        {
+          "name": "collection",
+          "context": {
+            "collection": "test"
+          }
+        },
+        {
+          "name": "criteria",
+          "context": {
+            "criteria": "{}"
+          }
+        },
+        {
+          "name": "find"
+        }
+      ],
+      "links": [
+        {
+          "source": 0,
+          "target": 1,
+          "out": "db",
+          "in": "db"
+        },
+        {
+          "source": 1,
+          "target": 3,
+          "out": "collection",
+          "in": "collection"
+        },
+        {
+          "source": 2,
+          "target": 3,
+          "out": "criteria",
+          "in": "criteria"
+        }
+      ]
+    },
+    "insert": {
+      "name": "insert",
+      "description": "mongojs insert",
+      "nodes": [
+        {
+          "name": "db",
+          "context": {
+            "connectionString": "chix-test"
+          }
+        },
+        {
+          "name": "collection",
+          "context": {
+            "collection": "test"
+          }
+        },
+        {
+          "name": "insert",
+          "context": {
+            "document": {
+              "hello": "World!"
+            }
+          }
+        }
+      ],
+      "links": [
+        {
+          "source": 0,
+          "target": 1,
+          "out": "db",
+          "in": "db"
+        },
+        {
+          "source": 1,
+          "target": 2,
+          "out": "collection",
+          "in": "collection"
+        }
+      ]
+    },
+    "remove": {
+      "name": "remove",
+      "description": "mongojs remove",
+      "nodes": [
+        {
+          "name": "db",
+          "context": {
+            "connectionString": "chix-test"
+          }
+        },
+        {
+          "name": "collection",
+          "context": {
+            "collection": "test"
+          }
+        },
+        {
+          "name": "remove"
+        }
+      ],
+      "links": [
+        {
+          "source": 0,
+          "target": 1,
+          "out": "db",
+          "in": "db"
+        },
+        {
+          "source": 1,
+          "target": 2,
+          "out": "collection",
+          "in": "collection"
+        }
+      ]
+    }
+  }
+}

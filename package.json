@@ -19,7 +19,7 @@
   "dependencies": {
     "mongojs": "latest"
   },
-  "main": "main",
+  "main": "x",
   "chix": {
     "nodes": [
       "db",
