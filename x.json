@@ -18,6 +18,7 @@
   "nodes": {
     "collection": {
       "fn": "output = { collection: input.db.collection(input.collection) }\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "collection": {
@@ -42,6 +43,7 @@
     },
     "criteria": {
       "fn": "output = { criteria: JSON.parse(input.criteria) }\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "criteria": {
@@ -59,6 +61,7 @@
     },
     "db": {
       "fn": "output = { db: mongojs(input.connectionString) }\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "connectionString": {
@@ -80,6 +83,7 @@
     },
     "find": {
       "fn": "output = [input.collection, 'find', input.criteria]\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "collection": {
@@ -103,6 +107,7 @@
     },
     "insert": {
       "fn": "output = [input.collection, 'insert', input.document]\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "collection": {
@@ -126,6 +131,7 @@
     },
     "remove": {
       "fn": "output = [input.collection, 'remove', input.criteria]\n",
+      "ns": "mongojs",
       "ports": {
         "input": {
           "collection": {
