@@ -21,12 +21,6 @@
   },
   "main": "x",
   "chix": {
-    "nodes": [
-      "db",
-      "collection",
-      "find",
-      "insert",
-      "remove"
-    ]
+	"name": "mongojs"
   }
 }
