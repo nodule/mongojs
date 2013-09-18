@@ -2,10 +2,10 @@
   "name": "find",
   "description": "MongoJS find",
   "nodes": [
-    { "name": "db", "context": { "connectionString": "chix-test" } },
-    { "name": "collection", "context": { "collection": "test" } },
-    { "name": "criteria", "context": { "criteria": "{}" } },
-    { "name": "find" }
+    { "ns": "mongojs", "name": "db", "context": { "connectionString": "chix-test" } },
+    { "ns": "mongojs", "name": "collection", "context": { "collection": "test" } },
+    { "ns": "mongojs", "name": "criteria", "context": { "criteria": "{}" } },
+    { "ns": "mongojs", "name": "find" }
   ],
   "links": [
     { "source": 0, "target": 1, "out": "db", "in": "db" },
