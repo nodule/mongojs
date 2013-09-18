@@ -1,5 +1,5 @@
 {
-  "name": "chix-mongojs",
+  "name": "mongojs",
   "description": "MongoJS for Chiχ",
   "version": "0.0.1",
   "licences": [
@@ -149,8 +149,8 @@
     }
   },
   "twigs": {
-    "chix-mongojs": {
-      "name": "chix-mongojs",
+    "mongojs": {
+      "name": "mongojs",
       "description": "mongojs remove",
       "nodes": [
         {
