@@ -17,12 +17,6 @@
   },
   "nodes": [
     {
-      "name": "collection",
-      "description": "mongojs collection",
-      "type": "provider",
-      "dependencies": [
-        "db"
-      ],
       "ports": {
         "input": {
           "collection": {
@@ -38,11 +32,16 @@
           }
         }
       },
-      "ns": "mongojs"
+      "dependencies": [
+        "db"
+      ],
+      "type": "provider",
+      "description": "mongojs collection",
+      "name": "collection",
+      "ns": "mongojs",
+      "fn": "output = { collection: input.db.collection(input.collection) }\n"
     },
     {
-      "name": "criteria",
-      "description": "mongojs criteria",
       "ports": {
         "input": {
           "criteria": {
@@ -55,15 +54,12 @@
           }
         }
       },
-      "ns": "mongojs"
+      "description": "mongojs criteria",
+      "name": "criteria",
+      "ns": "mongojs",
+      "fn": "output = { criteria: JSON.parse(input.criteria) }\n"
     },
     {
-      "name": "db",
-      "description": "mongojs database",
-      "type": "provider",
-      "require": {
-        "mongojs": "latest"
-      },
       "ports": {
         "input": {
           "connectionString": {
@@ -76,14 +72,16 @@
           }
         }
       },
-      "ns": "mongojs"
+      "require": {
+        "mongojs": "latest"
+      },
+      "type": "provider",
+      "description": "mongojs database",
+      "name": "db",
+      "ns": "mongojs",
+      "fn": "output = { db: mongojs(input.connectionString) }\n"
     },
     {
-      "name": "find",
-      "description": "mongojs find",
-      "dependencies": [
-        "collection"
-      ],
       "ports": {
         "input": {
           "collection": {
@@ -99,14 +97,15 @@
           }
         }
       },
-      "ns": "mongojs"
-    },
-    {
-      "name": "insert",
-      "description": "mongojs insert",
       "dependencies": [
         "collection"
       ],
+      "description": "mongojs find",
+      "name": "find",
+      "ns": "mongojs",
+      "fn": "output = [input.collection, 'find', input.criteria]\n"
+    },
+    {
       "ports": {
         "input": {
           "collection": {
@@ -122,14 +121,15 @@
           }
         }
       },
-      "ns": "mongojs"
-    },
-    {
-      "name": "remove",
-      "description": "mongojs remove",
       "dependencies": [
         "collection"
       ],
+      "description": "mongojs insert",
+      "name": "insert",
+      "ns": "mongojs",
+      "fn": "output = [input.collection, 'insert', input.document]\n"
+    },
+    {
       "ports": {
         "input": {
           "collection": {
@@ -145,7 +145,13 @@
           }
         }
       },
-      "ns": "mongojs"
+      "dependencies": [
+        "collection"
+      ],
+      "description": "mongojs remove",
+      "name": "remove",
+      "ns": "mongojs",
+      "fn": "output = [input.collection, 'remove', input.criteria]\n"
     }
   ],
   "twigs": [
