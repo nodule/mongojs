@@ -2,7 +2,7 @@
   "name": "chix-mongojs",
   "description": "MongoJS for Chiχ",
   "author": "Rob Halff <rob.halff@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "licenses": [
     {
       "type": "MIT",
@@ -21,6 +21,6 @@
   },
   "main": "x",
   "chix": {
-	"name": "mongojs"
+    "name": "mongojs"
   }
 }
