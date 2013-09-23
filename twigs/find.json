@@ -1,5 +1,6 @@
 {
   "name": "find",
+  "ns": "mongojs",
   "description": "MongoJS find",
   "nodes": [
     { "ns": "mongojs", "name": "db", "context": { "connectionString": "chix-test" } },

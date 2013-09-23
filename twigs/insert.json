@@ -1,5 +1,6 @@
 {
   "name": "insert",
+  "ns": "mongojs",
   "description": "mongojs insert", 
   "nodes": [
     { "ns": "mongojs", "name": "db", "context": { "connectionString": "chix-test" } },

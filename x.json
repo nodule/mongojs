@@ -157,6 +157,7 @@
   "twigs": [
     {
       "name": "find",
+      "ns": "mongojs",
       "description": "MongoJS find",
       "nodes": [
         {
@@ -204,11 +205,11 @@
           "out": "criteria",
           "in": "criteria"
         }
-      ],
-      "ns": "mongojs"
+      ]
     },
     {
       "name": "insert",
+      "ns": "mongojs",
       "description": "mongojs insert",
       "nodes": [
         {
@@ -248,11 +249,11 @@
           "out": "collection",
           "in": "collection"
         }
-      ],
-      "ns": "mongojs"
+      ]
     },
     {
       "name": "remove",
+      "ns": "mongojs",
       "description": "mongojs remove",
       "nodes": [
         {
@@ -287,8 +288,7 @@
           "out": "collection",
           "in": "collection"
         }
-      ],
-      "ns": "mongojs"
+      ]
     }
   ]
 }
