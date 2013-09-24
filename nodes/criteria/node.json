@@ -1,10 +1,13 @@
 {
   "name": "criteria",
-  "description": "mongojs criteria",
+  "description": "Mongojs criteria",
   "ports": {
     "input": {
       "criteria": {
-        "type": "string"
+        "type": "string",
+        "title": "criteria",
+        "description": "Specify a criteria in json",
+        "required": true
       }
     },
     "output": {

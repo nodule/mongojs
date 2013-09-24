@@ -8,7 +8,10 @@
   "ports": {
     "input": {
       "connectionString": {
-        "type": "string"
+        "type": "string",
+        "title": "Connection String",
+        "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
+        "require": true
       }
     },
     "output": {

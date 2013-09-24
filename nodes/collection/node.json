@@ -8,15 +8,24 @@
   "ports": {
     "input": {
       "collection": {
-        "type": "string"
+        "type": "string",
+        "title": "Collection",
+        "description": "The collection name for this database",
+        "required": true
       },
       "db": {
-        "type": "object"
+        "type": "object",
+        "title": "Db Handle",
+        "description": "Expects the `db` port of the mongojs.db node",
+        "readonly": true,
+        "required": true
       }
     },
     "output": {
       "collection": {
-        "type": "object"
+        "type": "object",
+        "title": "Db Collection handle",
+        "readonly": true
       }
     }
   }

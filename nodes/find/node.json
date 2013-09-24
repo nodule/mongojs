@@ -7,10 +7,15 @@
   "ports": {
     "input": {
       "collection": {
-        "type": "object"
+        "type": "object",
+        "title": "A mongojs.collection handle",
+        "required": true,
+        "readonly": true
       },
       "criteria": {
-        "type": "object"
+        "type": "object",
+        "title": "A mongojs criteria JSON object",
+        "required": true
       }
     },
     "output": {
