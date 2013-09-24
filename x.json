@@ -20,15 +20,24 @@
       "ports": {
         "input": {
           "collection": {
-            "type": "string"
+            "type": "string",
+            "title": "Collection",
+            "description": "The collection name for this database",
+            "required": true
           },
           "db": {
-            "type": "object"
+            "type": "object",
+            "title": "Db Handle",
+            "description": "Expects the `db` port of the mongojs.db node",
+            "readonly": true,
+            "required": true
           }
         },
         "output": {
           "collection": {
-            "type": "object"
+            "type": "object",
+            "title": "Db Collection handle",
+            "readonly": true
           }
         }
       },
@@ -45,7 +54,10 @@
       "ports": {
         "input": {
           "criteria": {
-            "type": "string"
+            "type": "string",
+            "title": "criteria",
+            "description": "Specify a criteria in json",
+            "required": true
           }
         },
         "output": {
@@ -54,7 +66,7 @@
           }
         }
       },
-      "description": "mongojs criteria",
+      "description": "Mongojs criteria",
       "name": "criteria",
       "ns": "mongojs",
       "fn": "output = { criteria: JSON.parse(input.criteria) }\n"
@@ -63,7 +75,10 @@
       "ports": {
         "input": {
           "connectionString": {
-            "type": "string"
+            "type": "string",
+            "title": "Connection String",
+            "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
+            "require": true
           }
         },
         "output": {
@@ -85,10 +100,15 @@
       "ports": {
         "input": {
           "collection": {
-            "type": "object"
+            "type": "object",
+            "title": "A mongojs.collection handle",
+            "required": true,
+            "readonly": true
           },
           "criteria": {
-            "type": "object"
+            "type": "object",
+            "title": "A mongojs criteria JSON object",
+            "required": true
           }
         },
         "output": {
@@ -109,10 +129,15 @@
       "ports": {
         "input": {
           "collection": {
-            "type": "object"
+            "type": "object",
+            "title": "a mongojs.collection handle",
+            "required": true,
+            "readonly": true
           },
           "document": {
-            "type": "object"
+            "type": "object",
+            "title": "JSON document",
+            "required": true
           }
         },
         "output": {
