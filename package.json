@@ -1,17 +1,12 @@
 {
-  "name": "chix-mongojs",
+  "name": "nodule-mongojs",
   "description": "MongoJS for Chiχ",
   "author": "Rob Halff <rob.halff@gmail.com>",
   "version": "0.0.3",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/psichi/chix/raw/master/LICENSE"
-    }
-  ],
+  "licenses": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psichi/chix-mongojs.git"
+    "url": "https://github.com/nodule/mongojs.git"
   },
   "engines": {
     "node": ">=0.6.0"
@@ -19,7 +14,13 @@
   "dependencies": {
     "mongojs": "latest"
   },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
   "main": "x",
+  "scripts": {
+    "test": "chit"
+  },
   "chix": {
     "name": "mongojs"
   }
