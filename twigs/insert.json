@@ -3,12 +3,12 @@
   "ns": "mongojs",
   "description": "mongojs insert", 
   "nodes": [
-    { "ns": "mongojs", "name": "db", "context": { "connectionString": "chix-test" } },
-    { "ns": "mongojs", "name": "collection", "context": { "collection": "test" } },
-    { "ns": "mongojs", "name": "insert", "context": { "document": { "hello": "World!" } } }
+    { "id": "0", "ns": "mongojs", "name": "db", "context": { "connectionString": "chix-test" } },
+    { "id": "1", "ns": "mongojs", "name": "collection", "context": { "collection": "test" } },
+    { "id": "2", "ns": "mongojs", "name": "insert", "context": { "document": { "hello": "World!" } } }
   ],
   "links": [
-    { "source": 0, "target": 1, "out": "db", "in": "db" },
-    { "source": 1, "target": 2, "out": "collection", "in": "collection" }
+    { "source": "0", "target": "1", "out": "db", "in": "db" },
+    { "source": "1", "target": "2", "out": "collection", "in": "collection" }
   ]
 }

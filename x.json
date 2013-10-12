@@ -2,15 +2,10 @@
   "name": "mongojs",
   "description": "MongoJS for Chiχ",
   "version": "0.0.3",
-  "licences": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/psichi/chix/raw/master/LICENSE"
-    }
-  ],
+  "licences": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psichi/chix-mongojs.git"
+    "url": "https://github.com/nodule/mongojs.git"
   },
   "dependencies": {
     "mongojs": "latest"
@@ -186,6 +181,7 @@
       "description": "MongoJS find",
       "nodes": [
         {
+          "id": "0",
           "ns": "mongojs",
           "name": "db",
           "context": {
@@ -193,6 +189,7 @@
           }
         },
         {
+          "id": "1",
           "ns": "mongojs",
           "name": "collection",
           "context": {
@@ -200,6 +197,7 @@
           }
         },
         {
+          "id": "2",
           "ns": "mongojs",
           "name": "criteria",
           "context": {
@@ -207,26 +205,27 @@
           }
         },
         {
+          "id": "3",
           "ns": "mongojs",
           "name": "find"
         }
       ],
       "links": [
         {
-          "source": 0,
-          "target": 1,
+          "source": "0",
+          "target": "1",
           "out": "db",
           "in": "db"
         },
         {
-          "source": 1,
-          "target": 3,
+          "source": "1",
+          "target": "3",
           "out": "collection",
           "in": "collection"
         },
         {
-          "source": 2,
-          "target": 3,
+          "source": "2",
+          "target": "3",
           "out": "criteria",
           "in": "criteria"
         }
@@ -238,6 +237,7 @@
       "description": "mongojs insert",
       "nodes": [
         {
+          "id": "0",
           "ns": "mongojs",
           "name": "db",
           "context": {
@@ -245,6 +245,7 @@
           }
         },
         {
+          "id": "1",
           "ns": "mongojs",
           "name": "collection",
           "context": {
@@ -252,6 +253,7 @@
           }
         },
         {
+          "id": "2",
           "ns": "mongojs",
           "name": "insert",
           "context": {
@@ -263,14 +265,14 @@
       ],
       "links": [
         {
-          "source": 0,
-          "target": 1,
+          "source": "0",
+          "target": "1",
           "out": "db",
           "in": "db"
         },
         {
-          "source": 1,
-          "target": 2,
+          "source": "1",
+          "target": "2",
           "out": "collection",
           "in": "collection"
         }
@@ -282,6 +284,7 @@
       "description": "mongojs remove",
       "nodes": [
         {
+          "id": "0",
           "ns": "mongojs",
           "name": "db",
           "context": {
@@ -289,6 +292,7 @@
           }
         },
         {
+          "id": "1",
           "ns": "mongojs",
           "name": "collection",
           "context": {
@@ -296,20 +300,21 @@
           }
         },
         {
+          "id": "2",
           "ns": "mongojs",
           "name": "remove"
         }
       ],
       "links": [
         {
-          "source": 0,
-          "target": 1,
+          "source": "0",
+          "target": "1",
           "out": "db",
           "in": "db"
         },
         {
-          "source": 1,
-          "target": 2,
+          "source": "1",
+          "target": "2",
           "out": "collection",
           "in": "collection"
         }
