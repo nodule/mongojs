@@ -1,5 +1,6 @@
 {
   "name": "db",
+  "ns": "mongojs",
   "description": "mongojs database",
   "type": "provider",
   "require": {

@@ -1,5 +1,6 @@
 {
   "name": "remove",
+  "ns": "mongojs",
   "description": "mongojs remove",
   "dependencies": [
     "collection"

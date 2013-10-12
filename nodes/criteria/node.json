@@ -1,5 +1,6 @@
 {
   "name": "criteria",
+  "ns": "mongojs",
   "description": "Mongojs criteria",
   "ports": {
     "input": {

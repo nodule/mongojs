@@ -41,8 +41,8 @@
       ],
       "type": "provider",
       "description": "mongojs collection",
-      "name": "collection",
       "ns": "mongojs",
+      "name": "collection",
       "fn": "output = { collection: input.db.collection(input.collection) }\n"
     },
     {
@@ -62,8 +62,8 @@
         }
       },
       "description": "Mongojs criteria",
-      "name": "criteria",
       "ns": "mongojs",
+      "name": "criteria",
       "fn": "output = { criteria: JSON.parse(input.criteria) }\n"
     },
     {
@@ -87,8 +87,8 @@
       },
       "type": "provider",
       "description": "mongojs database",
-      "name": "db",
       "ns": "mongojs",
+      "name": "db",
       "fn": "output = { db: mongojs(input.connectionString) }\n"
     },
     {
@@ -116,8 +116,8 @@
         "collection"
       ],
       "description": "mongojs find",
-      "name": "find",
       "ns": "mongojs",
+      "name": "find",
       "fn": "output = [input.collection, 'find', input.criteria]\n"
     },
     {
@@ -145,8 +145,8 @@
         "collection"
       ],
       "description": "mongojs insert",
-      "name": "insert",
       "ns": "mongojs",
+      "name": "insert",
       "fn": "output = [input.collection, 'insert', input.document]\n"
     },
     {
@@ -169,16 +169,16 @@
         "collection"
       ],
       "description": "mongojs remove",
-      "name": "remove",
       "ns": "mongojs",
+      "name": "remove",
       "fn": "output = [input.collection, 'remove', input.criteria]\n"
     }
   ],
   "twigs": [
     {
-      "name": "find",
+      "name": "remove",
       "ns": "mongojs",
-      "description": "MongoJS find",
+      "description": "mongojs remove",
       "nodes": [
         {
           "id": "0",
@@ -199,68 +199,7 @@
         {
           "id": "2",
           "ns": "mongojs",
-          "name": "criteria",
-          "context": {
-            "criteria": "{}"
-          }
-        },
-        {
-          "id": "3",
-          "ns": "mongojs",
-          "name": "find"
-        }
-      ],
-      "links": [
-        {
-          "source": "0",
-          "target": "1",
-          "out": "db",
-          "in": "db"
-        },
-        {
-          "source": "1",
-          "target": "3",
-          "out": "collection",
-          "in": "collection"
-        },
-        {
-          "source": "2",
-          "target": "3",
-          "out": "criteria",
-          "in": "criteria"
-        }
-      ]
-    },
-    {
-      "name": "insert",
-      "ns": "mongojs",
-      "description": "mongojs insert",
-      "nodes": [
-        {
-          "id": "0",
-          "ns": "mongojs",
-          "name": "db",
-          "context": {
-            "connectionString": "chix-test"
-          }
-        },
-        {
-          "id": "1",
-          "ns": "mongojs",
-          "name": "collection",
-          "context": {
-            "collection": "test"
-          }
-        },
-        {
-          "id": "2",
-          "ns": "mongojs",
-          "name": "insert",
-          "context": {
-            "document": {
-              "hello": "World!"
-            }
-          }
+          "name": "remove"
         }
       ],
       "links": [
@@ -276,7 +215,97 @@
           "out": "collection",
           "in": "collection"
         }
-      ]
+      ],
+      "nodeDefinitions": {
+        "mongojs": {
+          "collection": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "string",
+                  "title": "Collection",
+                  "description": "The collection name for this database",
+                  "required": true
+                },
+                "db": {
+                  "type": "object",
+                  "title": "Db Handle",
+                  "description": "Expects the `db` port of the mongojs.db node",
+                  "readonly": true,
+                  "required": true
+                }
+              },
+              "output": {
+                "collection": {
+                  "type": "object",
+                  "title": "Db Collection handle",
+                  "readonly": true
+                }
+              }
+            },
+            "dependencies": [
+              "db"
+            ],
+            "type": "provider",
+            "description": "mongojs collection",
+            "name": "collection",
+            "ns": "mongojs",
+            "fn": "output = { collection: input.db.collection(input.collection) }\n",
+            "_id": "5258bf00d1c59a953700004b"
+          },
+          "db": {
+            "ports": {
+              "input": {
+                "connectionString": {
+                  "type": "string",
+                  "title": "Connection String",
+                  "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
+                  "require": true
+                }
+              },
+              "output": {
+                "db": {
+                  "type": "object"
+                }
+              }
+            },
+            "require": {
+              "mongojs": "latest"
+            },
+            "type": "provider",
+            "description": "mongojs database",
+            "name": "db",
+            "ns": "mongojs",
+            "fn": "output = { db: mongojs(input.connectionString) }\n",
+            "_id": "5258bf00d1c59a953700004d"
+          },
+          "remove": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "object"
+                },
+                "criteria": {
+                  "type": "object"
+                }
+              },
+              "output": {
+                "success": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "dependencies": [
+              "collection"
+            ],
+            "description": "mongojs remove",
+            "name": "remove",
+            "ns": "mongojs",
+            "fn": "output = [input.collection, 'remove', input.criteria]\n",
+            "_id": "5258bf00d1c59a9537000050"
+          }
+        }
+      }
     },
     {
       "name": "remove",
@@ -318,7 +347,229 @@
           "out": "collection",
           "in": "collection"
         }
-      ]
+      ],
+      "nodeDefinitions": {
+        "mongojs": {
+          "collection": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "string",
+                  "title": "Collection",
+                  "description": "The collection name for this database",
+                  "required": true
+                },
+                "db": {
+                  "type": "object",
+                  "title": "Db Handle",
+                  "description": "Expects the `db` port of the mongojs.db node",
+                  "readonly": true,
+                  "required": true
+                }
+              },
+              "output": {
+                "collection": {
+                  "type": "object",
+                  "title": "Db Collection handle",
+                  "readonly": true
+                }
+              }
+            },
+            "dependencies": [
+              "db"
+            ],
+            "type": "provider",
+            "description": "mongojs collection",
+            "name": "collection",
+            "ns": "mongojs",
+            "fn": "output = { collection: input.db.collection(input.collection) }\n",
+            "_id": "5258bf00d1c59a953700004b"
+          },
+          "db": {
+            "ports": {
+              "input": {
+                "connectionString": {
+                  "type": "string",
+                  "title": "Connection String",
+                  "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
+                  "require": true
+                }
+              },
+              "output": {
+                "db": {
+                  "type": "object"
+                }
+              }
+            },
+            "require": {
+              "mongojs": "latest"
+            },
+            "type": "provider",
+            "description": "mongojs database",
+            "name": "db",
+            "ns": "mongojs",
+            "fn": "output = { db: mongojs(input.connectionString) }\n",
+            "_id": "5258bf00d1c59a953700004d"
+          },
+          "remove": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "object"
+                },
+                "criteria": {
+                  "type": "object"
+                }
+              },
+              "output": {
+                "success": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "dependencies": [
+              "collection"
+            ],
+            "description": "mongojs remove",
+            "name": "remove",
+            "ns": "mongojs",
+            "fn": "output = [input.collection, 'remove', input.criteria]\n",
+            "_id": "5258bf00d1c59a9537000050"
+          }
+        }
+      }
+    },
+    {
+      "name": "remove",
+      "ns": "mongojs",
+      "description": "mongojs remove",
+      "nodes": [
+        {
+          "id": "0",
+          "ns": "mongojs",
+          "name": "db",
+          "context": {
+            "connectionString": "chix-test"
+          }
+        },
+        {
+          "id": "1",
+          "ns": "mongojs",
+          "name": "collection",
+          "context": {
+            "collection": "test"
+          }
+        },
+        {
+          "id": "2",
+          "ns": "mongojs",
+          "name": "remove"
+        }
+      ],
+      "links": [
+        {
+          "source": "0",
+          "target": "1",
+          "out": "db",
+          "in": "db"
+        },
+        {
+          "source": "1",
+          "target": "2",
+          "out": "collection",
+          "in": "collection"
+        }
+      ],
+      "nodeDefinitions": {
+        "mongojs": {
+          "collection": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "string",
+                  "title": "Collection",
+                  "description": "The collection name for this database",
+                  "required": true
+                },
+                "db": {
+                  "type": "object",
+                  "title": "Db Handle",
+                  "description": "Expects the `db` port of the mongojs.db node",
+                  "readonly": true,
+                  "required": true
+                }
+              },
+              "output": {
+                "collection": {
+                  "type": "object",
+                  "title": "Db Collection handle",
+                  "readonly": true
+                }
+              }
+            },
+            "dependencies": [
+              "db"
+            ],
+            "type": "provider",
+            "description": "mongojs collection",
+            "name": "collection",
+            "ns": "mongojs",
+            "fn": "output = { collection: input.db.collection(input.collection) }\n",
+            "_id": "5258bf00d1c59a953700004b"
+          },
+          "db": {
+            "ports": {
+              "input": {
+                "connectionString": {
+                  "type": "string",
+                  "title": "Connection String",
+                  "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
+                  "require": true
+                }
+              },
+              "output": {
+                "db": {
+                  "type": "object"
+                }
+              }
+            },
+            "require": {
+              "mongojs": "latest"
+            },
+            "type": "provider",
+            "description": "mongojs database",
+            "name": "db",
+            "ns": "mongojs",
+            "fn": "output = { db: mongojs(input.connectionString) }\n",
+            "_id": "5258bf00d1c59a953700004d"
+          },
+          "remove": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "object"
+                },
+                "criteria": {
+                  "type": "object"
+                }
+              },
+              "output": {
+                "success": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "dependencies": [
+              "collection"
+            ],
+            "description": "mongojs remove",
+            "name": "remove",
+            "ns": "mongojs",
+            "fn": "output = [input.collection, 'remove', input.criteria]\n",
+            "_id": "5258bf00d1c59a9537000050"
+          }
+        }
+      }
     }
   ]
 }

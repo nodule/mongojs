@@ -1,5 +1,6 @@
 {
   "name": "collection",
+  "ns": "mongojs",
   "description": "mongojs collection",
   "type": "provider",
   "dependencies": [

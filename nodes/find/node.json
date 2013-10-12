@@ -1,5 +1,6 @@
 {
   "name": "find",
+  "ns": "mongojs",
   "description": "mongojs find",
   "dependencies": [
     "collection"

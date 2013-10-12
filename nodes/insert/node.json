@@ -1,5 +1,6 @@
 {
   "name": "insert",
+  "ns": "mongojs",
   "description": "mongojs insert",
   "dependencies": [
     "collection"
