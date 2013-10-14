@@ -218,6 +218,28 @@
       ],
       "nodeDefinitions": {
         "mongojs": {
+          "criteria": {
+            "ports": {
+              "input": {
+                "criteria": {
+                  "type": "string",
+                  "title": "criteria",
+                  "description": "Specify a criteria in json",
+                  "required": true
+                }
+              },
+              "output": {
+                "criteria": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Mongojs criteria",
+            "ns": "mongojs",
+            "name": "criteria",
+            "fn": "output = { criteria: JSON.parse(input.criteria) }\n",
+            "_id": "525c197b4281fd450f00005f"
+          },
           "collection": {
             "ports": {
               "input": {
@@ -248,10 +270,10 @@
             ],
             "type": "provider",
             "description": "mongojs collection",
-            "name": "collection",
             "ns": "mongojs",
+            "name": "collection",
             "fn": "output = { collection: input.db.collection(input.collection) }\n",
-            "_id": "5258bf00d1c59a953700004b"
+            "_id": "525c197b4281fd450f00005e"
           },
           "db": {
             "ports": {
@@ -274,35 +296,40 @@
             },
             "type": "provider",
             "description": "mongojs database",
-            "name": "db",
             "ns": "mongojs",
+            "name": "db",
             "fn": "output = { db: mongojs(input.connectionString) }\n",
-            "_id": "5258bf00d1c59a953700004d"
+            "_id": "525c197b4281fd450f000060"
           },
-          "remove": {
+          "find": {
             "ports": {
               "input": {
                 "collection": {
-                  "type": "object"
+                  "type": "object",
+                  "title": "A mongojs.collection handle",
+                  "required": true,
+                  "readonly": true
                 },
                 "criteria": {
-                  "type": "object"
+                  "type": "object",
+                  "title": "A mongojs criteria JSON object",
+                  "required": true
                 }
               },
               "output": {
-                "success": {
-                  "type": "boolean"
+                "documents": {
+                  "type": "object"
                 }
               }
             },
             "dependencies": [
               "collection"
             ],
-            "description": "mongojs remove",
-            "name": "remove",
+            "description": "mongojs find",
             "ns": "mongojs",
-            "fn": "output = [input.collection, 'remove', input.criteria]\n",
-            "_id": "5258bf00d1c59a9537000050"
+            "name": "find",
+            "fn": "output = [input.collection, 'find', input.criteria]\n",
+            "_id": "525c197b4281fd450f000061"
           }
         }
       }
@@ -380,10 +407,10 @@
             ],
             "type": "provider",
             "description": "mongojs collection",
-            "name": "collection",
             "ns": "mongojs",
+            "name": "collection",
             "fn": "output = { collection: input.db.collection(input.collection) }\n",
-            "_id": "5258bf00d1c59a953700004b"
+            "_id": "525c197b4281fd450f00005e"
           },
           "db": {
             "ports": {
@@ -406,19 +433,24 @@
             },
             "type": "provider",
             "description": "mongojs database",
-            "name": "db",
             "ns": "mongojs",
+            "name": "db",
             "fn": "output = { db: mongojs(input.connectionString) }\n",
-            "_id": "5258bf00d1c59a953700004d"
+            "_id": "525c197b4281fd450f000060"
           },
-          "remove": {
+          "insert": {
             "ports": {
               "input": {
                 "collection": {
-                  "type": "object"
+                  "type": "object",
+                  "title": "a mongojs.collection handle",
+                  "required": true,
+                  "readonly": true
                 },
-                "criteria": {
-                  "type": "object"
+                "document": {
+                  "type": "object",
+                  "title": "JSON document",
+                  "required": true
                 }
               },
               "output": {
@@ -430,11 +462,11 @@
             "dependencies": [
               "collection"
             ],
-            "description": "mongojs remove",
-            "name": "remove",
+            "description": "mongojs insert",
             "ns": "mongojs",
-            "fn": "output = [input.collection, 'remove', input.criteria]\n",
-            "_id": "5258bf00d1c59a9537000050"
+            "name": "insert",
+            "fn": "output = [input.collection, 'insert', input.document]\n",
+            "_id": "525c197b4281fd450f000062"
           }
         }
       }
@@ -482,6 +514,31 @@
       ],
       "nodeDefinitions": {
         "mongojs": {
+          "remove": {
+            "ports": {
+              "input": {
+                "collection": {
+                  "type": "object"
+                },
+                "criteria": {
+                  "type": "object"
+                }
+              },
+              "output": {
+                "success": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "dependencies": [
+              "collection"
+            ],
+            "description": "mongojs remove",
+            "ns": "mongojs",
+            "name": "remove",
+            "fn": "output = [input.collection, 'remove', input.criteria]\n",
+            "_id": "525c197b4281fd450f000063"
+          },
           "collection": {
             "ports": {
               "input": {
@@ -512,10 +569,10 @@
             ],
             "type": "provider",
             "description": "mongojs collection",
-            "name": "collection",
             "ns": "mongojs",
+            "name": "collection",
             "fn": "output = { collection: input.db.collection(input.collection) }\n",
-            "_id": "5258bf00d1c59a953700004b"
+            "_id": "525c197b4281fd450f00005e"
           },
           "db": {
             "ports": {
@@ -538,35 +595,10 @@
             },
             "type": "provider",
             "description": "mongojs database",
+            "ns": "mongojs",
             "name": "db",
-            "ns": "mongojs",
             "fn": "output = { db: mongojs(input.connectionString) }\n",
-            "_id": "5258bf00d1c59a953700004d"
-          },
-          "remove": {
-            "ports": {
-              "input": {
-                "collection": {
-                  "type": "object"
-                },
-                "criteria": {
-                  "type": "object"
-                }
-              },
-              "output": {
-                "success": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "dependencies": [
-              "collection"
-            ],
-            "description": "mongojs remove",
-            "name": "remove",
-            "ns": "mongojs",
-            "fn": "output = [input.collection, 'remove', input.criteria]\n",
-            "_id": "5258bf00d1c59a9537000050"
+            "_id": "525c197b4281fd450f000060"
           }
         }
       }
