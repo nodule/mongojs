@@ -178,6 +178,7 @@
     {
       "name": "remove",
       "ns": "mongojs",
+      "title": "mongojs remove",
       "description": "mongojs remove",
       "nodes": [
         {
@@ -337,6 +338,7 @@
     {
       "name": "remove",
       "ns": "mongojs",
+      "title": "mongojs remove",
       "description": "mongojs remove",
       "nodes": [
         {
@@ -474,6 +476,7 @@
     {
       "name": "remove",
       "ns": "mongojs",
+      "title": "mongojs remove",
       "description": "mongojs remove",
       "nodes": [
         {
