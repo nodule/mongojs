@@ -22,6 +22,7 @@
     "test": "chit"
   },
   "chix": {
-    "name": "mongojs"
+    "name": "mongojs",
+    "color": "rgb(185,29,8)"
   }
 }
