@@ -2,6 +2,9 @@
   "name": "criteria",
   "ns": "mongojs",
   "description": "Mongojs criteria",
+  "phrases": {
+    "active": "Creating criteria"
+  },
   "ports": {
     "input": {
       "criteria": {

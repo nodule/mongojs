@@ -2,6 +2,9 @@
   "name": "remove",
   "ns": "mongojs",
   "description": "mongojs remove",
+  "phrases": {
+    "active": "Removing document(s) based on the specified criteria"
+  },
   "dependencies": [
     "collection"
   ],

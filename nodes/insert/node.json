@@ -2,6 +2,9 @@
   "name": "insert",
   "ns": "mongojs",
   "description": "mongojs insert",
+  "phrases": {
+    "active": "Insering document into the collection"
+  },
   "dependencies": [
     "collection"
   ],

@@ -39,6 +39,9 @@
       "dependencies": [
         "db"
       ],
+      "phrases": {
+        "active": "Opening the {{input.collection}} collection"
+      },
       "type": "provider",
       "description": "mongojs collection",
       "ns": "mongojs",
@@ -60,6 +63,9 @@
             "type": "object"
           }
         }
+      },
+      "phrases": {
+        "active": "Creating criteria"
       },
       "description": "Mongojs criteria",
       "ns": "mongojs",
@@ -84,6 +90,9 @@
       },
       "require": {
         "mongojs": "latest"
+      },
+      "phrases": {
+        "active": "Creating mongodb connection: {{input.connectionString}}"
       },
       "type": "provider",
       "description": "mongojs database",
@@ -117,6 +126,9 @@
           }
         }
       },
+      "phrases": {
+        "active": "Performing find based on the specified criteria"
+      },
       "dependencies": [
         "collection"
       ],
@@ -149,6 +161,9 @@
       "dependencies": [
         "collection"
       ],
+      "phrases": {
+        "active": "Insering document into the collection"
+      },
       "description": "mongojs insert",
       "ns": "mongojs",
       "name": "insert",
@@ -173,6 +188,9 @@
       "dependencies": [
         "collection"
       ],
+      "phrases": {
+        "active": "Removing document(s) based on the specified criteria"
+      },
       "description": "mongojs remove",
       "ns": "mongojs",
       "name": "remove",

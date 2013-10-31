@@ -3,6 +3,9 @@
   "ns": "mongojs",
   "description": "mongojs collection",
   "type": "provider",
+  "phrases": {
+    "active": "Opening the {{input.collection}} collection"
+  },
   "dependencies": [
     "db"
   ],

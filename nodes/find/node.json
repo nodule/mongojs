@@ -5,6 +5,9 @@
   "dependencies": [
     "collection"
   ],
+  "phrases": {
+    "active": "Performing find based on the specified criteria"
+  },
   "ports": {
     "input": {
       "collection": {
