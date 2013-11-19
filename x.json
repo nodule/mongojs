@@ -46,6 +46,7 @@
       "description": "mongojs collection",
       "ns": "mongojs",
       "name": "collection",
+      "env": "server",
       "fn": "output = { collection: input.db.collection(input.collection) }\n"
     },
     {
@@ -70,6 +71,7 @@
       "description": "Mongojs criteria",
       "ns": "mongojs",
       "name": "criteria",
+      "env": "server",
       "fn": "output = { criteria: JSON.parse(input.criteria) }\n"
     },
     {
@@ -98,6 +100,7 @@
       "description": "mongojs database",
       "ns": "mongojs",
       "name": "db",
+      "env": "server",
       "fn": "output = { db: mongojs(input.connectionString) }\n"
     },
     {
@@ -135,6 +138,7 @@
       "description": "mongojs find",
       "ns": "mongojs",
       "name": "find",
+      "env": "server",
       "fn": "output = [input.collection, 'find', input.criteria]\n"
     },
     {
@@ -167,6 +171,7 @@
       "description": "mongojs insert",
       "ns": "mongojs",
       "name": "insert",
+      "env": "server",
       "fn": "output = [input.collection, 'insert', input.document]\n"
     },
     {
@@ -194,6 +199,7 @@
       "description": "mongojs remove",
       "ns": "mongojs",
       "name": "remove",
+      "env": "server",
       "fn": "output = [input.collection, 'remove', input.criteria]\n"
     }
   ],
@@ -629,5 +635,6 @@
         }
       }
     }
-  ]
+  ],
+  "env": "server"
 }

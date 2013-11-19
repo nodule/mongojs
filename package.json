@@ -23,6 +23,7 @@
   },
   "chix": {
     "name": "mongojs",
+    "env": "server",
     "color": "rgb(185,29,8)"
   }
 }
