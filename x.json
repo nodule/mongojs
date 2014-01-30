@@ -47,7 +47,7 @@
       "ns": "mongojs",
       "name": "collection",
       "env": "server",
-      "fn": "output = { collection: input.db.collection(input.collection) }\n"
+      "fn": "output = {\n  collection: input.db.collection(input.collection)\n}\n"
     },
     {
       "ports": {
@@ -72,7 +72,7 @@
       "ns": "mongojs",
       "name": "criteria",
       "env": "server",
-      "fn": "output = { criteria: JSON.parse(input.criteria) }\n"
+      "fn": "output = {\n  criteria: JSON.parse(input.criteria)\n}\n"
     },
     {
       "ports": {
@@ -101,7 +101,7 @@
       "ns": "mongojs",
       "name": "db",
       "env": "server",
-      "fn": "output = { db: mongojs(input.connectionString) }\n"
+      "fn": "output = {\n  db: mongojs(input.connectionString)\n}\n"
     },
     {
       "ports": {
