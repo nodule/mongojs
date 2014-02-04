@@ -4,14 +4,14 @@
   "description": "mongojs database",
   "type": "provider",
   "phrases": {
-    "active": "Creating mongodb connection: {{input.connectionString}}"
+    "active": "Creating mongodb connection: {{input.in}}"
   },
   "require": {
     "mongojs": "latest"
   },
   "ports": {
     "input": {
-      "connectionString": {
+      "connection_string": {
         "type": "string",
         "title": "Connection String",
         "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",

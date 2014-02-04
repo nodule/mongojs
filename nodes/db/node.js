@@ -1,3 +1,3 @@
 output = {
-  db: mongojs(input.connectionString)
+  db: mongojs(input.connection_string)
 }
