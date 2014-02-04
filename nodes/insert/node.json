@@ -23,8 +23,14 @@
       }
     },
     "output": {
-      "success": {
-        "type": "boolean"
+      "error": {
+        "type": "object"
+      },
+      "docs": {
+        "type": "object"
+      },
+      "n": {
+        "type": "object"
       }
     }
   }
