@@ -14,6 +14,25 @@
     {
       "ports": {
         "input": {
+          "db": {
+            "type": "function",
+            "title": "mongojs db handle"
+          }
+        },
+        "output": {}
+      },
+      "phrases": {
+        "active": "Closing database connection"
+      },
+      "description": "mongojs close",
+      "ns": "mongojs",
+      "name": "close",
+      "env": "server",
+      "fn": "input.db.close()\n"
+    },
+    {
+      "ports": {
+        "input": {
           "collection": {
             "type": "string",
             "title": "Collection",
@@ -52,32 +71,7 @@
     {
       "ports": {
         "input": {
-          "criteria": {
-            "type": "string",
-            "title": "criteria",
-            "description": "Specify a criteria in json",
-            "required": true
-          }
-        },
-        "output": {
-          "criteria": {
-            "type": "object"
-          }
-        }
-      },
-      "phrases": {
-        "active": "Creating criteria"
-      },
-      "description": "Mongojs criteria",
-      "ns": "mongojs",
-      "name": "criteria",
-      "env": "server",
-      "fn": "output = {\n  criteria: JSON.parse(input.criteria)\n}\n"
-    },
-    {
-      "ports": {
-        "input": {
-          "connectionString": {
+          "connection_string": {
             "type": "string",
             "title": "Connection String",
             "description": "The connection string should follow the format described in [the mongo connection](http://docs.mongodb.org/manual/reference/connection-string/) string docs",
@@ -94,14 +88,14 @@
         "mongojs": "latest"
       },
       "phrases": {
-        "active": "Creating mongodb connection: {{input.connectionString}}"
+        "active": "Creating mongodb connection: {{input.in}}"
       },
       "type": "provider",
       "description": "mongojs database",
       "ns": "mongojs",
       "name": "db",
       "env": "server",
-      "fn": "output = {\n  db: mongojs(input.connectionString)\n}\n"
+      "fn": "output = {\n  db: mongojs(input.connection_string)\n}\n"
     },
     {
       "ports": {

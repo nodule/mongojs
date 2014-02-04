@@ -1,0 +1,18 @@
+{
+  "name": "close",
+  "ns": "mongojs",
+  "description": "mongojs close",
+  "phrases": {
+    "active": "Closing database connection"
+  },
+  "ports": {
+    "input": {
+      "db": {
+        "type": "function",
+        "title": "mongojs db handle"
+      }
+    },
+    "output": {
+    }
+  }
+}
