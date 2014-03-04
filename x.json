@@ -138,12 +138,6 @@
     {
       "ports": {
         "input": {
-          ":start": {
-            "type": "string",
-            "title": "Async :start port",
-            "async": true,
-            "required": true
-          },
           "collection": {
             "type": "object",
             "title": "A mongojs.collection handle",
@@ -169,11 +163,10 @@
         "collection"
       ],
       "description": "MongoJS find all",
-      "async": true,
       "ns": "mongojs",
       "name": "findAll",
       "env": "server",
-      "fn": "on.input[':start'] = function() {\n  input.collection.find(function(err, data) {\n    if(err) {\n      output({ error: err });\n    } else {\n      output({ documents: data });\n    }\n  });\n}\n"
+      "fn": "output = [input.collection, 'find']\n"
     },
     {
       "ports": {
