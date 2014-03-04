@@ -1,1 +1,1 @@
-output = [input.collection, 'update', input.document]
+output = [input.collection, 'update', input.selector, input.document]

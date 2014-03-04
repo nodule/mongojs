@@ -244,6 +244,11 @@
             "required": true,
             "readonly": true
           },
+          "selector": {
+            "type": "object",
+            "title": "Selector",
+            "required": true
+          },
           "document": {
             "type": "object",
             "title": "JSON document",
@@ -272,7 +277,7 @@
       "ns": "mongojs",
       "name": "update",
       "env": "server",
-      "fn": "output = [input.collection, 'update', input.document]\n"
+      "fn": "output = [input.collection, 'update', input.selector, input.document]\n"
     }
   ],
   "twigs": [],

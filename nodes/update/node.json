@@ -16,6 +16,11 @@
         "required": true,
         "readonly": true
       },
+      "selector": {
+        "type": "object",
+        "title": "Selector",
+        "required": true
+      },
       "document": {
         "type": "object",
         "title": "JSON document",
