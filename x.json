@@ -234,6 +234,45 @@
       "name": "remove",
       "env": "server",
       "fn": "output = [input.collection, 'remove', input.criteria]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "collection": {
+            "type": "object",
+            "title": "a mongojs.collection handle",
+            "required": true,
+            "readonly": true
+          },
+          "document": {
+            "type": "object",
+            "title": "JSON document",
+            "required": true
+          }
+        },
+        "output": {
+          "error": {
+            "type": "object"
+          },
+          "docs": {
+            "type": "object"
+          },
+          "n": {
+            "type": "object"
+          }
+        }
+      },
+      "dependencies": [
+        "collection"
+      ],
+      "phrases": {
+        "active": "Updating document"
+      },
+      "description": "mongojs update",
+      "ns": "mongojs",
+      "name": "update",
+      "env": "server",
+      "fn": "output = [input.collection, 'update', input.document]\n"
     }
   ],
   "twigs": [],

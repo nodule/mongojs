@@ -1,0 +1,37 @@
+{
+  "name": "update",
+  "ns": "mongojs",
+  "description": "mongojs update",
+  "phrases": {
+    "active": "Updating document"
+  },
+  "dependencies": [
+    "collection"
+  ],
+  "ports": {
+    "input": {
+      "collection": {
+        "type": "object",
+        "title": "a mongojs.collection handle",
+        "required": true,
+        "readonly": true
+      },
+      "document": {
+        "type": "object",
+        "title": "JSON document",
+        "required": true
+      }
+    },
+    "output": {
+      "error": {
+        "type": "object"
+      },
+      "docs": {
+        "type": "object"
+      },
+      "n": {
+        "type": "object"
+      }
+    }
+  }
+}
