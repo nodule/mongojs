@@ -1,7 +1,6 @@
 {
   "name": "findAll",
   "ns": "mongojs",
-  "async": true,
   "description": "MongoJS find all",
   "dependencies": [
     "collection"
@@ -11,12 +10,6 @@
   },
   "ports": {
     "input": {
-      ":start": {
-        "type": "string",
-        "title": "Async :start port",
-        "async": true,
-        "required": true
-      },
       "collection": {
         "type": "object",
         "title": "A mongojs.collection handle",
