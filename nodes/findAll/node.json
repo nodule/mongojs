@@ -1,0 +1,38 @@
+{
+  "name": "findAll",
+  "ns": "mongojs",
+  "async": true,
+  "description": "MongoJS find all",
+  "dependencies": [
+    "collection"
+  ],
+  "phrases": {
+    "active": "Finding all documents"
+  },
+  "ports": {
+    "input": {
+      ":start": {
+        "type": "string",
+        "title": "Async :start port",
+        "async": true,
+        "required": true
+      },
+      "collection": {
+        "type": "object",
+        "title": "A mongojs.collection handle",
+        "required": true,
+        "readonly": true
+      }
+    },
+    "output": {
+      "error": {
+        "title": "Error",
+        "type": "object"
+      },
+      "documents": {
+        "title": "Documents",
+        "type": "object"
+      }
+    }
+  }
+}
