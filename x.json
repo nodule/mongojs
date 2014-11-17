@@ -69,6 +69,11 @@
       "fn": "output = {\n  collection: input.db.collection(input.collection)\n}\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "mongojs": "latest"
+        }
+      },
       "ports": {
         "input": {
           "connection_string": {
@@ -83,9 +88,6 @@
             "type": "object"
           }
         }
-      },
-      "require": {
-        "mongojs": "latest"
       },
       "phrases": {
         "active": "Creating mongodb connection: {{input.in}}"

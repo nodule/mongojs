@@ -6,9 +6,6 @@
   "phrases": {
     "active": "Creating mongodb connection: {{input.in}}"
   },
-  "require": {
-    "mongojs": "latest"
-  },
   "ports": {
     "input": {
       "connection_string": {
@@ -22,6 +19,11 @@
       "db": {
         "type": "object"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "mongojs": "latest"
     }
   }
 }
