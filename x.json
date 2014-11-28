@@ -58,7 +58,6 @@
       "phrases": {
         "active": "Opening the {{input.collection}} collection"
       },
-      "type": "provider",
       "description": "mongojs collection",
       "ns": "mongojs",
       "name": "collection",
@@ -89,7 +88,6 @@
       "phrases": {
         "active": "Creating mongodb connection: {{input.in}}"
       },
-      "type": "provider",
       "description": "mongojs database",
       "ns": "mongojs",
       "name": "db",

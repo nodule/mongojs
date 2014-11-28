@@ -2,7 +2,6 @@
   "name": "db",
   "ns": "mongojs",
   "description": "mongojs database",
-  "type": "provider",
   "phrases": {
     "active": "Creating mongodb connection: {{input.in}}"
   },
