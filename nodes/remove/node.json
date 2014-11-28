@@ -5,9 +5,6 @@
   "phrases": {
     "active": "Removing document(s) based on the specified criteria"
   },
-  "dependencies": [
-    "collection"
-  ],
   "ports": {
     "input": {
       "collection": {

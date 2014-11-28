@@ -5,9 +5,6 @@
   "phrases": {
     "active": "Updating document"
   },
-  "dependencies": [
-    "collection"
-  ],
   "ports": {
     "input": {
       "collection": {

@@ -2,9 +2,6 @@
   "name": "find",
   "ns": "mongojs",
   "description": "mongojs find",
-  "dependencies": [
-    "collection"
-  ],
   "phrases": {
     "active": "Performing find based on the specified criteria"
   },

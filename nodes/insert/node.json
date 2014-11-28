@@ -5,9 +5,6 @@
   "phrases": {
     "active": "Insering document into the collection"
   },
-  "dependencies": [
-    "collection"
-  ],
   "ports": {
     "input": {
       "collection": {

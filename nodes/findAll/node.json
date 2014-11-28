@@ -2,9 +2,6 @@
   "name": "findAll",
   "ns": "mongojs",
   "description": "MongoJS find all",
-  "dependencies": [
-    "collection"
-  ],
   "phrases": {
     "active": "Finding all documents"
   },

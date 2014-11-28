@@ -55,9 +55,6 @@
           }
         }
       },
-      "dependencies": [
-        "db"
-      ],
       "phrases": {
         "active": "Opening the {{input.collection}} collection"
       },
@@ -128,9 +125,6 @@
       "phrases": {
         "active": "Performing find based on the specified criteria"
       },
-      "dependencies": [
-        "collection"
-      ],
       "description": "mongojs find",
       "ns": "mongojs",
       "name": "find",
@@ -161,9 +155,6 @@
       "phrases": {
         "active": "Finding all documents"
       },
-      "dependencies": [
-        "collection"
-      ],
       "description": "MongoJS find all",
       "ns": "mongojs",
       "name": "findAll",
@@ -197,9 +188,6 @@
           }
         }
       },
-      "dependencies": [
-        "collection"
-      ],
       "phrases": {
         "active": "Insering document into the collection"
       },
@@ -225,9 +213,6 @@
           }
         }
       },
-      "dependencies": [
-        "collection"
-      ],
       "phrases": {
         "active": "Removing document(s) based on the specified criteria"
       },
@@ -269,9 +254,6 @@
           }
         }
       },
-      "dependencies": [
-        "collection"
-      ],
       "phrases": {
         "active": "Updating document"
       },

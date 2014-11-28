@@ -6,9 +6,6 @@
   "phrases": {
     "active": "Opening the {{input.collection}} collection"
   },
-  "dependencies": [
-    "db"
-  ],
   "ports": {
     "input": {
       "collection": {
