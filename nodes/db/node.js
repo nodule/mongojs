@@ -1,3 +1,3 @@
 output = {
-  db: mongojs($.connection_string)
+  db: $.create(mongojs($.connection_string))
 }
