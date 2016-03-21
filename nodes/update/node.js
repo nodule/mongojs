@@ -1,1 +1,1 @@
-output = [input.collection, 'update', input.selector, input.document]
+output = [$.collection, 'update', $.selector, $.document]

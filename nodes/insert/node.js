@@ -1,1 +1,1 @@
-output = [input.collection, 'insert', input.document]
+output = [$.collection, 'insert', $.document]

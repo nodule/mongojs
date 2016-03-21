@@ -1,3 +1,3 @@
 output = {
-  collection: input.db.collection(input.collection)
+  collection: $.db.collection($.collection)
 }

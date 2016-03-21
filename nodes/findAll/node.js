@@ -1,1 +1,1 @@
-output = [input.collection, 'find']
+output = [$.collection, 'find']

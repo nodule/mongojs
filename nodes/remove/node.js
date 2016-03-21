@@ -1,1 +1,1 @@
-output = [input.collection, 'remove', input.criteria]
+output = [$.collection, 'remove', $.criteria]

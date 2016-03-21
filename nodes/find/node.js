@@ -1,1 +1,1 @@
-output = [input.collection, 'find', input.criteria]
+output = [$.collection, 'find', $.criteria]
