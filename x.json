@@ -28,7 +28,7 @@
       "ns": "mongojs",
       "name": "close",
       "env": "server",
-      "fn": "input.db.close()\n"
+      "fn": "output = function() {\n  $.db.close()\n}\n"
     },
     {
       "ports": {
@@ -62,7 +62,7 @@
       "ns": "mongojs",
       "name": "collection",
       "env": "server",
-      "fn": "output = {\n  collection: input.db.collection(input.collection)\n}\n"
+      "fn": "output = {\n  collection: $.create($.db.collection($.collection))\n}\n"
     },
     {
       "dependencies": {
@@ -92,7 +92,7 @@
       "ns": "mongojs",
       "name": "db",
       "env": "server",
-      "fn": "output = {\n  db: mongojs(input.connection_string)\n}\n"
+      "fn": "output = {\n  db: $.create(mongojs($.connection_string))\n}\n"
     },
     {
       "ports": {
@@ -127,7 +127,7 @@
       "ns": "mongojs",
       "name": "find",
       "env": "server",
-      "fn": "output = [input.collection, 'find', input.criteria]\n"
+      "fn": "output = [$.collection, 'find', $.criteria]\n"
     },
     {
       "ports": {
@@ -157,7 +157,7 @@
       "ns": "mongojs",
       "name": "findAll",
       "env": "server",
-      "fn": "output = [input.collection, 'find']\n"
+      "fn": "output = [$.collection, 'find']\n"
     },
     {
       "ports": {
@@ -193,7 +193,7 @@
       "ns": "mongojs",
       "name": "insert",
       "env": "server",
-      "fn": "output = [input.collection, 'insert', input.document]\n"
+      "fn": "output = [$.collection, 'insert', $.document]\n"
     },
     {
       "ports": {
@@ -218,7 +218,7 @@
       "ns": "mongojs",
       "name": "remove",
       "env": "server",
-      "fn": "output = [input.collection, 'remove', input.criteria]\n"
+      "fn": "output = [$.collection, 'remove', $.criteria]\n"
     },
     {
       "ports": {
@@ -259,7 +259,7 @@
       "ns": "mongojs",
       "name": "update",
       "env": "server",
-      "fn": "output = [input.collection, 'update', input.selector, input.document]\n"
+      "fn": "output = [$.collection, 'update', $.selector, $.document]\n"
     }
   ],
   "twigs": [],

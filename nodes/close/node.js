@@ -1,1 +1,3 @@
-$.db.close()
+output = function() {
+  $.db.close()
+}
