@@ -8,7 +8,7 @@
   "ports": {
     "input": {
       "db": {
-        "type": "object",
+        "type": "function",
         "title": "mongojs db handle"
       }
     },

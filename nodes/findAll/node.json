@@ -8,7 +8,7 @@
   "ports": {
     "input": {
       "collection": {
-        "type": "object",
+        "type": "function",
         "title": "A mongojs.collection handle",
         "required": true,
         "readonly": true

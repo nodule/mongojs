@@ -16,7 +16,7 @@
     },
     "output": {
       "db": {
-        "type": "object"
+        "type": "function"
       }
     }
   },
