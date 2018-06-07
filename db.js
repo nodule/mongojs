@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
       db: {
-        type: "object"
+        type: "function"
       }
     }
   },

@@ -8,7 +8,7 @@ module.exports = {
   ports: {
     input: {
       collection: {
-        type: "object",
+        type: "function",
         title: "a mongojs.collection handle",
         required: true,
         readonly: true

@@ -8,12 +8,13 @@ module.exports = {
   ports: {
     input: {
       db: {
-        type: "object",
+        type: "function",
         title: "mongojs db handle"
       }
     },
     output: {}
   },
+  on: {},
   fn: function close(input, $, output, state, done, cb, on) {
     var r = function() {
       $.db.close()

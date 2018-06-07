@@ -12,25 +12,31 @@
   },
   "nodes": [
     {
+      "name": "close",
+      "ns": "mongojs",
+      "description": "mongojs close",
+      "phrases": {
+        "active": "Closing database connection"
+      },
       "ports": {
         "input": {
           "db": {
-            "type": "object",
+            "type": "function",
             "title": "mongojs db handle"
           }
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Closing database connection"
-      },
-      "description": "mongojs close",
-      "ns": "mongojs",
-      "name": "close",
       "env": "server",
       "fn": "output = function() {\n  $.db.close()\n}\n"
     },
     {
+      "name": "collection",
+      "ns": "mongojs",
+      "description": "mongojs collection",
+      "phrases": {
+        "active": "Opening the {{input.collection}} collection"
+      },
       "ports": {
         "input": {
           "collection": {
@@ -40,7 +46,7 @@
             "required": true
           },
           "db": {
-            "type": "object",
+            "type": "function",
             "title": "Db Handle",
             "description": "Expects the `db` port of the mongojs.db node",
             "readonly": true,
@@ -49,26 +55,21 @@
         },
         "output": {
           "collection": {
-            "type": "object",
+            "type": "function",
             "title": "Db Collection handle",
             "readonly": true
           }
         }
       },
-      "phrases": {
-        "active": "Opening the {{input.collection}} collection"
-      },
-      "description": "mongojs collection",
-      "ns": "mongojs",
-      "name": "collection",
       "env": "server",
       "fn": "output = {\n  collection: $.create($.db.collection($.collection))\n}\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "mongojs": "latest"
-        }
+      "name": "db",
+      "ns": "mongojs",
+      "description": "mongojs database",
+      "phrases": {
+        "active": "Creating mongodb connection: {{input.in}}"
       },
       "ports": {
         "input": {
@@ -81,24 +82,29 @@
         },
         "output": {
           "db": {
-            "type": "object"
+            "type": "function"
           }
         }
       },
-      "phrases": {
-        "active": "Creating mongodb connection: {{input.in}}"
+      "dependencies": {
+        "npm": {
+          "mongojs": "latest"
+        }
       },
-      "description": "mongojs database",
-      "ns": "mongojs",
-      "name": "db",
       "env": "server",
       "fn": "output = {\n  db: $.create(mongojs($.connection_string))\n}\n"
     },
     {
+      "name": "find",
+      "ns": "mongojs",
+      "description": "mongojs find",
+      "phrases": {
+        "active": "Performing find based on the specified criteria"
+      },
       "ports": {
         "input": {
           "collection": {
-            "type": "object",
+            "type": "function",
             "title": "A mongojs.collection handle",
             "required": true,
             "readonly": true
@@ -120,20 +126,20 @@
           }
         }
       },
-      "phrases": {
-        "active": "Performing find based on the specified criteria"
-      },
-      "description": "mongojs find",
-      "ns": "mongojs",
-      "name": "find",
       "env": "server",
       "fn": "output = [$.collection, 'find', $.criteria]\n"
     },
     {
+      "name": "findAll",
+      "ns": "mongojs",
+      "description": "MongoJS find all",
+      "phrases": {
+        "active": "Finding all documents"
+      },
       "ports": {
         "input": {
           "collection": {
-            "type": "object",
+            "type": "function",
             "title": "A mongojs.collection handle",
             "required": true,
             "readonly": true
@@ -150,20 +156,20 @@
           }
         }
       },
-      "phrases": {
-        "active": "Finding all documents"
-      },
-      "description": "MongoJS find all",
-      "ns": "mongojs",
-      "name": "findAll",
       "env": "server",
       "fn": "output = [$.collection, 'find']\n"
     },
     {
+      "name": "insert",
+      "ns": "mongojs",
+      "description": "mongojs insert",
+      "phrases": {
+        "active": "Insering document into the collection"
+      },
       "ports": {
         "input": {
           "collection": {
-            "type": "object",
+            "type": "function",
             "title": "a mongojs.collection handle",
             "required": true,
             "readonly": true
@@ -186,20 +192,20 @@
           }
         }
       },
-      "phrases": {
-        "active": "Insering document into the collection"
-      },
-      "description": "mongojs insert",
-      "ns": "mongojs",
-      "name": "insert",
       "env": "server",
       "fn": "output = [$.collection, 'insert', $.document]\n"
     },
     {
+      "name": "remove",
+      "ns": "mongojs",
+      "description": "mongojs remove",
+      "phrases": {
+        "active": "Removing document(s) based on the specified criteria"
+      },
       "ports": {
         "input": {
           "collection": {
-            "type": "object"
+            "type": "function"
           },
           "criteria": {
             "type": "object"
@@ -211,20 +217,20 @@
           }
         }
       },
-      "phrases": {
-        "active": "Removing document(s) based on the specified criteria"
-      },
-      "description": "mongojs remove",
-      "ns": "mongojs",
-      "name": "remove",
       "env": "server",
       "fn": "output = [$.collection, 'remove', $.criteria]\n"
     },
     {
+      "name": "update",
+      "ns": "mongojs",
+      "description": "mongojs update",
+      "phrases": {
+        "active": "Updating document"
+      },
       "ports": {
         "input": {
           "collection": {
-            "type": "object",
+            "type": "function",
             "title": "a mongojs.collection handle",
             "required": true,
             "readonly": true
@@ -252,16 +258,9 @@
           }
         }
       },
-      "phrases": {
-        "active": "Updating document"
-      },
-      "description": "mongojs update",
-      "ns": "mongojs",
-      "name": "update",
       "env": "server",
       "fn": "output = [$.collection, 'update', $.selector, $.document]\n"
     }
   ],
-  "twigs": [],
   "env": "server"
 }

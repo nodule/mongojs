@@ -8,7 +8,7 @@ module.exports = {
   ports: {
     input: {
       collection: {
-        type: "object"
+        type: "function"
       },
       criteria: {
         type: "object"

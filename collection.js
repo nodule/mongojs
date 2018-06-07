@@ -14,7 +14,7 @@ module.exports = {
         required: true
       },
       db: {
-        type: "object",
+        type: "function",
         title: "Db Handle",
         description: "Expects the `db` port of the mongojs.db node",
         readonly: true,
@@ -23,7 +23,7 @@ module.exports = {
     },
     output: {
       collection: {
-        type: "object",
+        type: "function",
         title: "Db Collection handle",
         readonly: true
       }
